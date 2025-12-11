@@ -5,5 +5,9 @@
 const prompt = require("prompt-sync")()
 const compra = Number(prompt("Total da compra: R$ "))
 
-const maxParcelas = Math.floor(compra / 20)
-const numParcelas = Math.min(maxParcelas, 6)
+const minParcelas = Math.floor(compra / 20) // calcula o máximo de de parcelas pela condição de ser valor minimo de 20 reais
+const numParcelas = Math.min(minParcelas, 6) // quantidade de parcelas
+const valorParcelas = (compra / minParcelas).toFixed(2)
+
+console.log(`Valor da Compra R$: ${compra.toFixed(2)}`)
+console.log(`Pode pagar em ${numParcelas}x de R$: ${valorParcelas}`)
